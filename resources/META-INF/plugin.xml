@@ -1,0 +1,41 @@
+<idea-plugin>
+    <id>com.khande.idea.plugin.LocateInFinder</id>
+    <name>LocateInFinder</name>
+    <version>1.0</version>
+    <vendor email="ThomsonStan@outlook.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+      在指定的文件管理器 Finder 或 PathFinder 中打开当前文件所在文件夹<br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Init project<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="145.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products   -->
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="khande.LocateInFinder" class="com.khande.idea.plugin.locateinfinder.action.LocateInFinderAction"
+                text="Locate File in Finder" description="Locate the selected file in the specified Finder">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="RevealIn"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="RevealIn"/>
+            <add-to-group group-id="FileMenu" anchor="after" relative-to-action="RevealIn"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="meta alt K"/>
+        </action>
+
+    </actions>
+
+</idea-plugin>
